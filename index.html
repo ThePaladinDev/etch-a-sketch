@@ -16,10 +16,41 @@
   <body>
     <main class="page">
       <!-- Title -->
-      <div class="title">
+      <section class="title">
         <h1>Etch-a-Sketch!</h1>
         <div class="title-underline"></div>
-      </div>
+      </section>
+      <!-- Board -->
+      <section class="board">
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+      </section>
+      <!-- Controls -->
+      <section class="controls">
+        <div class="reset-control">
+          <button type="button" class="btn">Reset</button>
+        </div>
+        <div class="resize-control">
+          <button type="button" class="btn" id="decrease-size">-</button>
+          <button type="button" class="btn" id="default-size">
+            <span id="current-size-info">3 x 3</span>
+          </button>
+          <button type="button" class="btn" id="increase-size">+</button>
+        </div>
+      </section>
     </main>
   </body>
 </html>

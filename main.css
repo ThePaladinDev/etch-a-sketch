@@ -1,0 +1,52 @@
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+/* Board */
+.board {
+  width: 90%;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  border: 15px solid var(--secondary-5);
+  border-radius: var(--extraBorderRadius);
+  background-color: var(--altBackgroundColor);
+}
+.row {
+  flex: 1;
+  display: flex;
+  border: 2px solid darkred;
+}
+.cell {
+  flex: 1;
+  border: 2px solid blueviolet;
+  background-color: var(--accent-1);
+  opacity: calc(1 - 0);
+}
+
+/* Controls */
+.controls {
+  width: 90%;
+  max-width: 700px;
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
+/* Reset */
+/* Resize */
+.resize-control {
+  display: flex;
+  gap: 0.2rem;
+}
+/* btn */
+.btn {
+  background-color: var(--accent-7);
+}
+.btn:hover {
+  background-color: var(--accent-9);
+}
