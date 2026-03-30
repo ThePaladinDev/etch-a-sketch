@@ -1,0 +1,425 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); */
+/* Just the 400 (Regular), 500 (Medium), and 700(Bold) font-weights */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&family=Spectral:wght@400;500;700&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Force inheritance for form elements */
+/* By default, elements like input, textarea, select, and button do not inherit the color or font-family from the body. They use the browser's internal "User Agent" styles, which usually defaults to a specific font and black text. */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  /* The blinking cursor now matches your primary brand color */
+  caret-color: var(--caretColor);
+}
+
+html {
+  font-size: 100%;
+} /* 16px */
+
+:root {
+  /* colors */
+  /* accent */
+  --accent-1: #ffd7d7;
+  --accent-2: #ffd1d1;
+  --accent-3: #ffcaca;
+  --accent-4: #ffc4c4;
+  --accent-5: #ffbdbd;
+  --accent-6: #e6aaaa;
+  --accent-7: #cc9797;
+  --accent-8: #b38484;
+  --accent-9: #997171;
+  /* text */
+  --text-color-0: #f8fafc;
+  --text-color-1: #f1f5f9;
+  --text-color-2: #e2e8f0;
+  --text-color-3: #cbd5e1;
+  --text-color-4: #94a3b8;
+  --text-color-5: #64748b;
+  --text-color-6: #475569;
+  --text-color-7: #334155;
+  --text-color-8: #1e293b;
+  --text-color-9: #0f172a;
+  /* primary */
+  --primary-0: #fcf9ea;
+  --primary-1: #e3e0d3;
+  --primary-2: #cac7bb;
+  --primary-3: #b0aea4;
+  --primary-4: #97958c;
+  --primary-5: #7e7d75;
+  --primary-6: #65645e;
+  --primary-7: #4c4b46;
+  --primary-8: #32322f;
+  --primary-9: #191917;
+  /* secondary */
+  --secondary-0: #badfdb;
+  --secondary-1: #a7c9c5;
+  --secondary-2: #95b2af;
+  --secondary-3: #829c99;
+  --secondary-4: #708683;
+  --secondary-5: #5d706e;
+  --secondary-6: #4a5958;
+  --secondary-7: #384342;
+  --secondary-8: #252d2c;
+  --secondary-9: #131616;
+  /* bg */
+  --bg-primary: var(--primary-0);
+  --bg-primary-darker: var(--primary-2);
+  --bg-secondary: var(--secondary-0);
+  --bg-secondary-darker: var(--secondary-2);
+  --fg-primary: var(--text-color-9);
+  --fg-secondary: var(--text-color-7);
+  /* rest of the colors */
+  --color-black: #222;
+  --color-white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+  /* var - Light Mode Defaults */
+  --backgroundColor: var(--bg-primary);
+  --backgroundColorDarker: var(--bg-primary-darker);
+  --textColor: var(--fg-primary);
+  --altBackgroundColor: var(--bg-secondary);
+  --altBackgroundColorDarker: var(--bg-secondary-darker);
+  --altTextColor: var(--fg-secondary);
+  --static-black: var(--color-black);
+  --static-white: var(--color-white); /* For buttons, icons that stay white */
+  --layer-1: var(--color-white); /* For forms, cards, sidebars */
+  --danger-bg: var(--red-light);
+  --danger-fg: var(--red-dark);
+  --safe-bg: var(--green-light);
+  --safe-fg: var(--green-dark);
+  --formBorderColor: var(--primary-2); /* .form-input, .form-textarea */
+  --placeholderColor: var(--primary-4); /* :placeholder */
+  --mutedColor: var(--primary-4); /* .loading */
+  --caretColor: var(--accent-5);
+  /* text */
+  --headingFont: 'Spectral', Georgia, serif;
+  --bodyFont:
+    'Karla', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* text dimensions */
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+  /* element properties */
+  --borderRadius: 0.25rem;
+  --extraBorderRadius: 0.75rem;
+  --paddingVertical: 0.375rem;
+  --paddingHorizontal: 0.75rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  /* width */
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  --view-width: 90vw; /* mobile-first */
+  /* box shadow */
+  /* shadow-normal */
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  /* shadow-medium */
+  --shadow-2:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* shadow-large */
+  --shadow-3:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* shadow-extra-large */
+  --shadow-4:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Use letterSpacing in these cases */
+/* h1, h2, h3, h4, h5 {
+  letter-spacing: var(--letterSpacing);
+}
+.btn {
+  letter-spacing: var(--letterSpacing);
+}
+.form-label {
+  letter-spacing: var(--letterSpacing);
+}
+.form-alert {
+  letter-spacing: var(--letterSpacing);
+} */
+
+body {
+  background: var(--backgroundColor);
+  font-family: var(--bodyFont);
+  font-weight: 400;
+  /* line-height: 1.75; */
+  line-height: 1.5;
+  color: var(--textColor);
+}
+
+p {
+  /* margin-bottom: 1.5rem; */
+  /* max-width: 40em; */
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  /* margin-bottom: 1.38rem; */
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+  /* Fixed */
+  /* font-size: 3.052rem; */
+  /* Big */
+  font-size: clamp(2rem, 5vw, 5rem); /* Large heading */
+  /* Bigger */
+  /* font-size: clamp(3rem, 6vw, 6rem); */
+}
+
+h2 {
+  /* Fixed */
+  /* font-size: 2.441rem; */
+  /* Big */
+  font-size: clamp(1.5rem, 3vw, 3rem); /* Medium heading */
+  /* Bigger */
+  /* font-size: clamp(2.5rem, 5vw, 5rem); */
+}
+
+h3 {
+  /* Fixed */
+  /* font-size: 1.953rem; */
+  /* Big */
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem); /* Small heading */
+  /* Bigger */
+  /* font-size: clamp(2rem, 4vw, 4rem); */
+}
+
+h4 {
+  /* Fixed */
+  /* font-size: 1.563rem; */
+  /* Big */
+  font-size: clamp(1rem, 2vw, 2rem); /* Extra small heading */
+  /* Bigger */
+  /* font-size: clamp(1.5rem, 3vw, 3rem); */
+}
+
+h5 {
+  /* Fixed */
+  /* font-size: 1.25rem; */
+  /* Big */
+  font-size: clamp(0.875rem, 1.5vw, 1.5rem); /* Tiny heading */
+  /* Bigger */
+  /* font-size: clamp(1rem, 2vw, 2rem); */
+}
+
+.text {
+  /* margin-bottom: 1.5rem; */
+  max-width: 40em;
+}
+
+small,
+.text-small {
+  font-size: var(--small-text);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Image */
+/* parent container - say img container */
+.img-container {
+  /* use 90vw for mobile devices - @media (max-width: 768px {...}) */
+  /* width: 40vw; */
+  width: 32vw;
+  /* Consistent wxh for a grid of cards. Comment the below out otherwise. */
+  /* height: 18rem; (if you do this, then you do manual calculation.) */
+  aspect-ratio: 1 / 1;
+  max-width: var(--fixed-width);
+  /* border: 5px solid var(--accent-5);
+  border-radius: var(--extraBorderRadius); */
+  overflow: hidden; /* otherwise square corners poke out of rounded borders. */
+  /* hover-lift effect */
+  /* using 'all' causes lag. 'all' forces the browser to check every single property (color, width, height, position, opacity) 60 times per second during the animation. */
+  /* transition: var(--transition); */
+  /* transition:
+    transform 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out; */
+  box-shadow: var(--shadow-1);
+}
+/* .img-container:hover {
+  transform: translateY(-0.25rem);
+  border-color: var(--accent-6);
+  box-shadow: var(--shadow-3);
+} */
+/* use container to contain width and height */
+.img {
+  width: 100%;
+  /* Consistent wxh for a grid of cards. Comment the below out otherwise. */
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Buttons */
+.btn {
+  cursor: pointer;
+  padding: var(--paddingVertical) var(--paddingHorizontal);
+  border: transparent;
+  border-radius: var(--borderRadius);
+  background-color: var(--accent-5);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+  color: var(--static-white);
+  box-shadow: var(--shadow-1);
+  /* using 'all' causes lag. 'all' forces the browser to check every single property (color, width, height, position, opacity) 60 times per second during the animation. */
+  /* transition: var(--transition); */
+  transition:
+    background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  display: inline-block;
+  /* if not using a parent container to center, do it directly here */
+  /* display: block; */
+  /* width: 200px; (say width = 200px needed) */
+  /* MUST BE: element 'width' < container 'width' */
+  /* margin: 0 auto; (say, top-bot = 0 needed) */
+}
+.btn:hover {
+  background-color: var(--accent-7);
+  box-shadow: var(--shadow-3);
+}
+.btn-hipster {
+  background-color: var(--accent-2);
+  color: var(--accent-5);
+}
+.btn-hipster:hover {
+  background-color: var(--accent-7);
+  color: var(--accent-2);
+}
+.btn-block {
+  width: 100%;
+}
+
+/* Alerts */
+.alert {
+  padding: var(--paddingVertical) var(--paddingHorizontal);
+  margin-bottom: 1rem;
+  border-color: transparent;
+  border-radius: var(--borderRadius);
+}
+.alert-danger {
+  background-color: var(--danger-bg);
+  color: var(--danger-fg);
+}
+.alert-success {
+  background-color: var(--safe-bg);
+  color: var(--safe-fg);
+}
+
+/* Form */
+.form {
+  width: 90vw; /* starting with a small screen. */
+  max-width: var(--fixed-width);
+  background-color: var(--layer-1);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 2.5rem;
+  /* if not using a parent container to center, do it directly here */
+  /* MUST BE: element 'width' < container 'width' */
+  margin: 3rem auto;
+}
+.form-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.form-row {
+  margin-bottom: 1rem;
+}
+.form-label {
+  display: block;
+  font-size: var(--small-text);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: var(--paddingVertical) var(--paddingHorizontal);
+  border-radius: var(--borderRadius);
+  background-color: var(--backgroundColor);
+  border: 1px solid var(--formBorderColor);
+}
+.form-textarea {
+  height: 7rem;
+}
+::placeholder {
+  font-family: inherit;
+  color: var(--placeholderColor);
+}
+.form-alert {
+  color: var(--danger-fg);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+}
+
+/* Loading Spinner */
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid var(--mutedColor);
+  border-radius: 50%;
+  border-top-color: var(--accent-5);
+  animation: spinner 0.6s linear infinite;
+  /* if not using a parent container to center, do it directly here */
+  /* MUST BE: element 'width' < container 'width' */
+  margin: 3rem auto;
+}
+
+/* Title + Title Underline */
+.title {
+  text-align: center;
+}
+.title-underline {
+  background-color: var(--accent-5);
+  width: 4rem;
+  height: 0.25rem;
+  margin: 0 auto;
+  /* margin-top: 1rem; */
+  margin-top: 0.25rem;
+  /* margin-bottom: 1.38rem; */
+}
+
+/* Page - to center header-'body'-footer */
+.page {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
