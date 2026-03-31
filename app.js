@@ -75,7 +75,6 @@ function updateCurrentSize(controlTriggered) {
       newSize = changeSize(DEFAULT);
   }
   setCurrentSize(newSize);
-  return;
 }
 
 function updateGameState(btn) {
@@ -104,7 +103,17 @@ function getRandomColor() {
 function handleCellHover(e) {
   const cell = e.target.closest('.cell');
   if (!cell) return;
+  if (cell.dataset.isColored === 'true') {
+    const currentOpacity = parseFloat(cell.style.opacity); // parseFloat the 'string' now
+    if (cell.style.opacity > 0) {
+      // cell.style.backgroundColor = getRandomColor();
+      cell.style.opacity = currentOpacity - 0.1; // will be stored as a 'string'
+    }
+    return;
+  }
   cell.style.backgroundColor = getRandomColor();
+  cell.style.opacity = 0.6; // will be stored as a 'string'
+  cell.dataset.isColored = 'true';
 }
 
 /*
@@ -125,7 +134,6 @@ function createBoardRowCells(row, size) {
     div.classList.add('cell');
     row.appendChild(div);
   }
-  return;
 }
 
 function createBoardRows(size) {
@@ -151,14 +159,12 @@ function makeNewBoard(size) {
     createBoardRowCells(row, size);
     board.appendChild(row);
   });
-  return;
 }
 
 function manageControlDisabledState(size) {
   decreaseBtn.disabled = size <= MIN_SIZE;
   defaultBtn.disabled = size === DEFAULT_SIZE;
   increaseBtn.disabled = MAX_SIZE <= size;
-  return;
 }
 
 function updateBoardSizeInfo(size) {
