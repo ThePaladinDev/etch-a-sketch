@@ -20,13 +20,12 @@ main {
 .row {
   flex: 1;
   display: flex;
-  border: 2px solid darkred;
 }
 .cell {
   flex: 1;
-  border: 2px solid blueviolet;
+  /* border: 2px solid var(--text-color-9); */
+  border-radius: var(--extraBorderRadius);
   background-color: var(--accent-1);
-  opacity: calc(1 - 0);
 }
 
 /* Controls */

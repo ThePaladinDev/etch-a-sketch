@@ -93,11 +93,28 @@ function handleControlClick(e) {
   updateGameState(btn);
 }
 
+function getRandomNumber(limit) {
+  return Math.floor(Math.random() * limit);
+}
+
+function getRandomColor() {
+  return `rgb(${getRandomNumber(255)} ${getRandomNumber(255)} ${getRandomNumber(255)})`;
+}
+
+function handleCellHover(e) {
+  const cell = e.target.closest('.cell');
+  if (!cell) return;
+  cell.style.backgroundColor = getRandomColor();
+}
+
 /*
  * Handle Player Interactions
  */
 // Controls Interaction
 controlsContainer.addEventListener('click', handleControlClick);
+
+// Hover on cell/board Interaction
+board.addEventListener('mouseover', handleCellHover);
 
 /*
  * Board Creation
