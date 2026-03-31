@@ -83,6 +83,10 @@ function updateGameState(btn) {
   restartGame(getCurrentSize());
 }
 
+/*
+ * Actual Player Interactions Handlers
+ */
+
 function handleControlClick(e) {
   const btn = e.target.closest('.btn');
   if (!btn) return;
@@ -91,15 +95,20 @@ function handleControlClick(e) {
 
 /*
  * Handle Player Interactions
- * (with all buttons)
  */
+// Controls Interaction
 controlsContainer.addEventListener('click', handleControlClick);
 
 /*
- * Logic for starting a new game
+ * Board Creation
  */
-function clearBoard() {
-  board.replaceChildren();
+function createBoardRowCells(row, size) {
+  for (let i = 0; i < size; i++) {
+    const div = document.createElement('div');
+    div.classList.add('cell');
+    row.appendChild(div);
+  }
+  return;
 }
 
 function createBoardRows(size) {
@@ -112,25 +121,25 @@ function createBoardRows(size) {
   return rows;
 }
 
-function createBoardRowCells(row, size) {
-  for (let i = 0; i < size; i++) {
-    const div = document.createElement('div');
-    div.classList.add('cell');
-    row.appendChild(div);
-  }
-  return;
+/*
+ * Logic for starting a new game
+ */
+function clearBoard() {
+  board.replaceChildren();
 }
 
 function makeNewBoard(size) {
   const rows = createBoardRows(size);
-  // for (const row of rows) createBoardRowCells(row);
-  rows.forEach((row) => createBoardRowCells(row, size));
-  rows.forEach((row) => board.appendChild(row));
+  rows.forEach((row) => {
+    createBoardRowCells(row, size);
+    board.appendChild(row);
+  });
   return;
 }
 
 function manageControlDisabledState(size) {
   decreaseBtn.disabled = size <= MIN_SIZE;
+  defaultBtn.disabled = size === DEFAULT_SIZE;
   increaseBtn.disabled = MAX_SIZE <= size;
   return;
 }
