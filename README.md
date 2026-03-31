@@ -4,7 +4,7 @@ A browser-based etch-a-sketch game.
 
 ## 🚀 Live Demo
 
-Link to live demo. (Coming Soon!)
+[Link to live demo.](https://thepaladindev.github.io/etch-a-sketch/)
 
 ## 📸 Preview
 
